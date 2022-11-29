@@ -1,6 +1,6 @@
 <template>
     <div>
-        <AlbumComp />
+        <AlbumComp :arrayApi="arrayApi"  :arrayApiSerie="arrayApiSerie"/>
     </div>
 </template>
 
@@ -8,6 +8,10 @@
 import AlbumComp from './AlbumComp.vue'
     export default {
         name: 'MainComp',
+        props:{
+            arrayApi: Array,
+            arrayApiSerie: Array
+        },
         components:{
             AlbumComp
         }

@@ -7,7 +7,7 @@
             <div>
                 <div class="input-group mb-3 search">
                 <button class="btn btn-outline-secondary" type="button" id="button-addon1">Search</button>
-                <input type="text" class="form-control" placeholder="search" aria-label="Example text with button addon" aria-describedby="button-addon1" v-model="inputText" @keyup.enter="$emit('search', inputText)">
+                <input type="text" class="form-control" placeholder="search..." aria-label="Example text with button addon" aria-describedby="button-addon1" v-model="inputText" @keyup.enter="$emit('search', inputText)">
             </div>
             </div>
             

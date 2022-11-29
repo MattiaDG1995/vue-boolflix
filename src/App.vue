@@ -4,7 +4,7 @@
 
     </div>
     <HeaderComp @search="searchFilm"/>
-    <MainComp />
+    <MainComp :arrayApi="arrayApi" :arrayApiSerie="arrayApiSerie"/>
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
   data(){
     return{
         arrayApi:[],
-        
+        arrayApiSerie:[],
         searcText: '',
         apiObj:{
           link: 'https://api.themoviedb.org/3/search/',
@@ -47,6 +47,12 @@ export default {
           .then((res)=>{
              this.arrayApi = res.data.results
               console.log(this.arrayApi)
+          }),
+
+          axios.get(`${this.apiObj.link}${this.apiObj.serieTV}${this.apiObj.key}&query=${this.searcText}`)
+          .then((res)=>{
+             this.arrayApiSerie = res.data.results
+              console.log(this.arrayApiSerie)
           })
       
     },
@@ -57,6 +63,11 @@ export default {
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 </style>

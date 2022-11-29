@@ -1,30 +1,31 @@
 <template>
-    <div class="cards p-2">
+    <div>
+        <div class="cards p-2">
         <div class="card bg-dark text-white" style="width: 18rem;">
-            <img :src="linkImg + elem.poster_path" class="card-img-top" alt="...">
+            <img :src="linkImg + val.poster_path" class="card-img-top" alt="...">
             <div class="card-body">
-                <h4 class="card-title">Titolo: {{elem.title}}</h4>
-                <h5 class="card-title">Titolo Originale: {{elem.original_title}}</h5>
-                <h5 class="card-title">Lingua: {{elem.original_language}}</h5>
-                <p class="card-text">Voto: {{elem.vote_average}}</p>              
+                <h4 class="card-title">Titolo: {{val.title}}</h4>
+                <h5 class="card-title">Titolo Originale: {{val.original_title}}</h5>
+                <h5 class="card-title">Lingua: {{val.original_language}}</h5>
+                <p class="card-text">Voto: {{val.vote_average}}</p>              
             </div>
+    </div>
     </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'FilmComp',
+        name: 'SerieComp',
         props:{
-            arrayApi: Array,          
-            elem: Object
+            arrayApiSerie: Array,
+            val: Object
         },
         data(){
             return{
                 linkImg: 'http://image.tmdb.org/t/p/w200/'
             }
         }
-
     }
 </script>
 
@@ -40,5 +41,4 @@
             height: 660px;
         }
 }
-    
 </style>
