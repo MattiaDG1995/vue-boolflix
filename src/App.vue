@@ -43,7 +43,8 @@ export default {
   methods: {
     searchFilm( inputText ) {
       this.searcText = inputText
-      axios.get(`${this.apiObj.link}${this.apiObj.films}${this.apiObj.key}&query=${this.searcText}`)
+      if( this.searcText !== ''){
+        axios.get(`${this.apiObj.link}${this.apiObj.films}${this.apiObj.key}&query=${this.searcText}`)
           .then((res)=>{
              this.arrayApi = res.data.results
               console.log(this.arrayApi)
@@ -54,6 +55,11 @@ export default {
              this.arrayApiSerie = res.data.results
               console.log(this.arrayApiSerie)
           })
+      }else{
+        this.arrayApi=[]
+        this.arrayApiSerie=[]
+      }
+      
       
     },
   },
