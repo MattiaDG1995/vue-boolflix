@@ -80,10 +80,10 @@
    height: 500px;
    aspect-ratio: 2/3;
    .card-text{
-        display: none;
+        display: none;      
     }
     .card-img-top{
-        width: 100%;
+        width: 100%;    
     }
     &:hover .card-img-top{        
         display: none;
