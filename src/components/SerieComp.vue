@@ -1,17 +1,13 @@
 <template>
-    <div>
-        <div class="cards p-2">
-        <div class="card bg-dark text-white" style="width: 18rem;">
+        <div class="cards mx-2">
             <img :src="linkImg + val.poster_path" class="card-img-top" alt="...">
-            <div class="card-body">
+            <div class="card-text text-white p-2">
                 <h4 class="card-title">Titolo: {{val.name}}</h4>
                 <h5 class="card-title">Titolo Originale: {{val.original_name}}</h5>
                 <h5 class="card-title">Lingua: {{val.original_language}}</h5>
                 <img :src="linkFlag + val.original_language.toUpperCase() + '.png'">
                 <p class="card-text">Voto: <font-awesome-icon icon="fa-solid fa-star" v-for="(i, index) in this.star(this.val)"  :key='index'/><font-awesome-icon icon="fa-regular fa-star" v-for="(i, index) in 5 - this.star(this.val)"  :key='index'/></p>              
             </div>
-    </div>
-    </div>
     </div>
 </template>
 
@@ -76,15 +72,27 @@
 </script>
 
 <style lang="scss" scoped>
-.cards{
-   /*  width: 300px; */
-        img{
-            /* aspect-ratio: 1/1; */
-            object-fit: contain;
-        }
+    .cards{
+        background-color: black;
+        height: 500px;
+        aspect-ratio: 2/3;
+   .card-text{
+        display: none;
+    }
+    .card-img-top{
+        width: 100%;
+    }
+    &:hover .card-img-top{        
+        display: none;
+    }
+    
+    &:hover .card-text{       
+        display: block;
+    }
 
-        .card{
-            height: 660px;
-        }
-}
+    }
+    .fa-star{
+        color: yellow;
+    }
+        
 </style>

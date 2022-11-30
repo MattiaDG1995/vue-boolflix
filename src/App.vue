@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="bg-dark">
     <div>
 
     </div>
@@ -35,10 +35,20 @@ export default {
 
     }
 },
-  /* mounted(){
-       
+   mounted(){
+    axios.get(`${this.apiObj.link}${this.apiObj.films}${this.apiObj.key}&query=horror`)
+          .then((res)=>{
+             this.arrayApi = res.data.results
+              console.log(this.arrayApi)
+          }),
+          axios.get(`${this.apiObj.link}${this.apiObj.serieTV}${this.apiObj.key}&query=adventure`)
+          .then((res)=>{
+             this.arrayApiSerie = res.data.results
+              console.log(this.arrayApiSerie)
+          })
+
                    
-  }, */
+  }, 
 
   methods: {
     searchFilm( inputText ) {
@@ -69,6 +79,10 @@ export default {
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  
 }
 
 *{

@@ -1,17 +1,13 @@
 <template>
-    <div class="cards p-2">
-        <div class="card bg-dark text-white" style="width: 18rem;">
-            <img :src="linkImg + elem.poster_path" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h4 class="card-title">Titolo: {{elem.title}}</h4>
-                <h5 class="card-title">Titolo Originale: {{elem.original_title}}</h5>
-                <h5 class="card-title">Lingua: {{elem.original_language}}</h5>
-                <img :src="linkFlag + elem.original_language.toUpperCase() + '.png'">
-                <p class="card-text">Voto: <font-awesome-icon icon="fa-solid fa-star" v-for="(i, index) in this.star(this.elem)"  :key='index' /><font-awesome-icon icon="fa-regular fa-star" v-for="(i, index) in 5 - this.star(this.elem)"  :key='index'/></p>
-                 
-                             
-            </div>
-    </div>
+    <div class="cards mx-2">      
+        <img :src="linkImg + elem.poster_path" class="card-img-top" alt="...">
+        <div class="card-text text-white p-2">
+            <h4 class="card-title">Titolo: {{elem.title}}</h4>
+            <h5 class="card-title">Titolo Originale: {{elem.original_title}}</h5>
+            <h5 class="card-title">Lingua: {{elem.original_language}}</h5>
+            <img :src="linkFlag + elem.original_language.toUpperCase() + '.png'">
+            <p class="card-vote">Voto: <font-awesome-icon icon="fa-solid fa-star" v-for="(i, index) in this.star(this.elem)"  :key='index' /><font-awesome-icon icon="fa-regular fa-star" v-for="(i, index) in 5 - this.star(this.elem)"  :key='index'/></p>                          
+        </div>       
     </div>
 </template>
 
@@ -24,7 +20,7 @@
         },
         data(){
             return{
-                linkImg: 'http://image.tmdb.org/t/p/w200/',
+                linkImg: 'http://image.tmdb.org/t/p/w500/',
                 linkFlag: 'https://www.countryflagicons.com/SHINY/32/'
             }
         },
@@ -80,15 +76,26 @@
 
 <style lang="scss" scoped>
 .cards{
-   /*  width: 300px; */
-        img{
-            /* aspect-ratio: 1/1; */
-            object-fit: contain;
-        }
-
-        .card{
-            height: 770px;
-        }
-}
+    background-color: black;
+   height: 500px;
+   aspect-ratio: 2/3;
+   .card-text{
+        display: none;
+    }
+    .card-img-top{
+        width: 100%;
+    }
+    &:hover .card-img-top{        
+        display: none;
+    }
     
+    &:hover .card-text{       
+        display: block;
+    }
+
+    }
+    .fa-star{
+        color: yellow;
+    }
+            
 </style>

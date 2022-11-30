@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <main class="p-4">
         <AlbumComp :arrayApi="arrayApi"  :arrayApiSerie="arrayApiSerie"/>
-    </div>
+    </main>
 </template>
 
 <script>
@@ -19,5 +19,9 @@ import AlbumComp from './AlbumComp.vue'
 </script>
 
 <style lang="scss" scoped>
-
+    main{
+        width: 100vw;
+       /*  height: 100vh; */
+       margin-top: 70px;
+    }
 </style>

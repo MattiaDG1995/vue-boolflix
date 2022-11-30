@@ -1,12 +1,12 @@
 <template>
     <div>
-        <h2>FILMS:</h2>
+        <h2 class="text-white fw-bold">FILMS:</h2>
         <div class="cont d-flex  flex-direction-row">
             
             <FilmComp :arrayApi="arrayApi" v-for="(elem, index) in arrayApi" :key="index" :elem="elem"/>
             
         </div>
-        <h2>SERIE:</h2>
+        <h2 class="text-white fw-bold">SERIE:</h2>
         <div class="cont d-flex  flex-direction-row">
             <SerieComp :arrayApiSerie="arrayApiSerie" v-for="(val, index) in arrayApiSerie" :key="index" :val="val"/>
         </div>
@@ -34,6 +34,8 @@ import SerieComp from './SerieComp.vue'
 
 <style lang="scss" scoped>
  .cont{
+    width: 100%;
     overflow: auto;
  }
+
 </style>
