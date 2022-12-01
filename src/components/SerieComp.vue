@@ -24,7 +24,7 @@
                 linkFlag: 'https://www.countryflagicons.com/SHINY/32/'
             }
         },
-        beforeUpdate(){
+        mounted(){
             this.flag(this.val)
             this.star(this.val)
         },

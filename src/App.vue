@@ -41,7 +41,7 @@ export default {
              this.arrayApi = res.data.results
               console.log(this.arrayApi)
           }),
-          axios.get(`${this.apiObj.link}${this.apiObj.serieTV}${this.apiObj.key}&query=adventure`)
+          axios.get(`${this.apiObj.link}${this.apiObj.serieTV}${this.apiObj.key}&query=family`)
           .then((res)=>{
              this.arrayApiSerie = res.data.results
               console.log(this.arrayApiSerie)

@@ -13,7 +13,7 @@ import 'bootstrap/dist/js/bootstrap.min.js'
   /* import specific icons */
   import { faUserSecret, faMagnifyingGlass, faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons'
   /*Import icone regular */
-  import { faFaceSmile, faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons'
+  import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons'
 
  
   /* add icons to the library */

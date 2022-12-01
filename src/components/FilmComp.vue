@@ -25,7 +25,7 @@
             }
         },
 
-        beforeUpdate(){
+        mounted(){
             this.flag(this.elem)
             this.star(this.elem)
         },
